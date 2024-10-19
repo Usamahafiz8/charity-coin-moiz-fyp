@@ -1,22 +1,12 @@
-import Link from 'next/link';
+import Footer from "./Footer";
+import Header from "./Header";
 
 const Layout = ({ children }) => {
   return (
     <div>
-      <header>
-        <nav>
-          <ul>
-            <li><Link href="/">Home</Link></li>
-            <li><Link href="/about">About</Link></li>
-          </ul>
-        </nav>
-      </header>
-
+        <Header/>
       <main>{children}</main>
-
-      <footer>
-        <p>Footer content goes here.</p>
-      </footer>
+      <Footer/>
     </div>
   );
 };
