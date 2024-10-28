@@ -18,13 +18,13 @@ const Header = () => {
     <div className="font-sans font-bold m-0 p-6 box-border">
       <header className="bg-gray-950 p-4">
         <div className="container mx-auto flex justify-between items-center">
-          <div className="text-white text-xl font-bold">Charity Foundtion</div>
+          <Link href="/"  className="text-white text-xl font-bold hover:cursor-pointer">Charity Foundtion</Link>
           
           
 
            {/* Hamburger Icon */}
             <button 
-            className="text-white block md:hidden" 
+            className="text-white block lg:hidden" 
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle Navigation"
             aria-expanded={isOpen}
@@ -35,7 +35,7 @@ const Header = () => {
              </button>
 
              {/* Navigation Links */}
-             <nav className={`md:flex ${isOpen ? 'block' : 'hidden'} md:block`}>
+             <nav className={`lg:flex ${isOpen ? 'block' : 'hidden'} lg:block`}>
              <ul className="flex flex-col md:flex-row md:items-center list-none space-y-4 md:space-y-0 md:space-x-5">
               <li className="mr-2.5">
                 <Link href="/Pool" className="text-white" >Pool</Link>
