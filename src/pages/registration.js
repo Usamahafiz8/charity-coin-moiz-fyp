@@ -1,0 +1,219 @@
+import React, { useState } from 'react';  
+import TrustyRegistration from './Trusty'; // Import your Trusty form
+import HospitalRegistration from './HospitalRegistration'; // Import your HospitalRegistration form
+
+const CharityRegistration = () => {
+  const [charityData, setCharityData] = useState({
+    charityName: '',
+    address: '',
+    phone: '',
+    registrationNumber: '',
+    email: '',
+    missionStatement: '',
+    FullName: '',
+    donationOptions: '',
+  });
+
+  const [activeForm, setActiveForm] = useState('charity'); // Toggle between forms
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setCharityData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(charityData);
+    alert('Charity registration submitted successfully!');
+  };
+
+  return (
+    <div className="flex shadow-lg min-h-screen items-center justify-center p-4 border-white">
+      <div className="p-8 rounded-lg shadow-lg w-full max-w-3xl border border-white">
+        <h2 className="text-3xl font-bold mb-6 text-white text-center">
+          {activeForm === 'charity' 
+            ? 'Charity Registration' 
+            : activeForm === 'trusty' 
+            ? 'Trusty Registration' 
+            : 'Hospital Registration'}
+        </h2>
+
+        {/* Navbar */}
+        <nav className="flex justify-center mb-6 ">
+          <button
+            onClick={() => setActiveForm('charity')}
+            className={`px-4 py-2 mx-2 ${activeForm === 'charity' ? 'bg-green-600 text-white' : 'bg-white '} rounded-md hover:bg-green-400 transition duration-200`}
+          >
+            Charity Registration
+          </button>
+          <button
+            onClick={() => setActiveForm('trusty')}
+            className={`px-4 py-2 mx-2 ${activeForm === 'trusty' ? 'bg-green-600 text-white' : 'bg-white '} rounded-md hover:bg-green-400 transition duration-200`}
+          >
+            Trusty Registration
+          </button>
+          <button
+            onClick={() => setActiveForm('HospitalRegistration')}
+            className={`px-4 py-2 mx-2 ${activeForm === 'HospitalRegistration' ? 'bg-green-600 text-white' : 'bg-white '} rounded-md hover:bg-green-400 transition duration-200`}
+          >
+            Hospital Registration
+          </button>
+        </nav>
+
+        {/* Form Display */}
+        {activeForm === 'charity' ? (
+          <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
+           
+            <div className="md:col-span-2">
+              <h3 className="text-xl font-semibold mb-4 text-white">Personal Information</h3>
+            </div>
+            <div>
+              <label className="block text-white font-medium mb-2" htmlFor="FullName">Full-Name</label>
+              <input
+                type="text"
+                id="FullName"
+                name="FullName"
+                value={charityData.FullName}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-2 border border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600 text-white bg-gray-800"
+                placeholder="Enter Full-Name"
+              />
+            </div>
+
+            <div>
+              <label className="block text-white font-medium mb-2" htmlFor="phone">Phone</label>
+              <input
+                type="number"
+                id="phone"
+                name="phone"
+                value={charityData.phone}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-2 border border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600 text-white bg-gray-800"
+                placeholder="Enter Phone Number"
+              />
+            </div>
+
+            <div>
+              <label className="block text-white font-medium mb-2" htmlFor="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={charityData.email}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-2 border border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white bg-gray-800"
+                placeholder="Enter Email"
+              />
+            </div>
+
+            {/* Section 2: Organization Information */}
+            <div className="md:col-span-2 mt-8">
+              <h3 className="text-xl font-semibold mb-4 text-white">Organization Information</h3>
+            </div>
+
+            <div>
+              <label className="block text-white font-medium mb-2" htmlFor="charityName">Charity Name</label>
+              <input
+                type="text"
+                id="charityName"
+                name="charityName"
+                value={charityData.charityName}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-2 border border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white bg-gray-800"
+                placeholder="Enter Charity Name"
+              />
+            </div>
+
+            <div>
+              <label className="block text-white font-medium mb-2" htmlFor="address">Address</label>
+              <input
+                type="text"
+                id="address"
+                name="address"
+                value={charityData.address}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-2 border border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white bg-gray-800"
+                placeholder="Enter Address"
+              />
+            </div>
+
+            <div>
+              <label className="block text-white font-medium mb-2" htmlFor="registrationNumber">Registration Number</label>
+              <input
+                type="text"
+                id="registrationNumber"
+                name="registrationNumber"
+                value={charityData.registrationNumber}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-2 border border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white bg-gray-800"
+                placeholder="Enter Registration Number"
+              />
+            </div>
+
+            {/* Section 3: Charity Mission & Donation */}
+            <div className="md:col-span-2 mt-8">
+              <h3 className="text-xl font-semibold mb-4 text-white">Charity Mission & Donation</h3>
+            </div>
+
+            <div className="md:col-span-2">
+              <label className="block text-white font-medium mb-2" htmlFor="missionStatement">Mission Statement</label>
+              <textarea
+                id="missionStatement"
+                name="missionStatement"
+                value={charityData.missionStatement}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-2 border border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white bg-gray-800"
+                placeholder="Enter Charity Mission Statement"
+                rows="4"
+              ></textarea>
+            </div>
+
+            <div>
+              <label className="block text-white font-medium mb-2" htmlFor="donationOptions">Donation Options</label>
+              <input
+                type="text"
+                id="donationOptions"
+                name="donationOptions"
+                value={charityData.donationOptions}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-2 border border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white bg-gray-800"
+                placeholder="Enter Donation Options (e.g., USDT or other Currency)"
+              />
+              <input 
+                className="w-full px-4 mt-4 py-2 border border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white bg-gray-800"
+                placeholder="ERC-20"  
+              />
+            </div>
+
+            {/* Submit Button */}
+            <div className="md:col-span-2 text-center mt-4">
+              <button
+                type="submit"
+                className="bg-green-600 text-white py-2 px-6 rounded-lg hover:bg-green-400 transition duration-200"
+              >
+                Donate
+              </button>
+            </div>
+          </form>
+        ) : activeForm === 'trusty' ? (
+          <TrustyRegistration /> 
+        ) : (
+          <HospitalRegistration /> 
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default CharityRegistration;
