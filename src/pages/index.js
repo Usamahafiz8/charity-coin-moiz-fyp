@@ -21,10 +21,10 @@ export default function Home() {
           initial="initial"
           animate="animate"
         >
-          <h1 className="text-6xl font-bold text-white">
+          <h1 className="md:text-8xl font-bold text-white text-5xl ">
             Maximize your crypto impact<br /> with our no fee model.
           </h1>
-          <p className="mt-8 text-2xl text-white">
+          <p className="mt-8 text-2xl font-thin text-white">
             With Crypto for Charity, you can give with confidence knowing that<br /> 
             100% of the net proceeds of your donation support the causes you love.
           </p>
@@ -34,7 +34,7 @@ export default function Home() {
           >
             Donate Crypto
           </motion.a>
-          <p className="text-green-400 mt-4 text-2xl">Learn more about our Foundation.</p>
+          <p className="text-green-400 mt-4 text-2xl font-thin">Learn more about our Foundation.</p>
         </motion.section>
 
         <div className="w-48 h-52">
