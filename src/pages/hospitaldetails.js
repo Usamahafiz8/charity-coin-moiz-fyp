@@ -59,7 +59,7 @@ const HospitalsDetails = () => {
               onClick={() => handleImageClick(hospital)} // Open popup when image is clicked
             />
             <h2 className="text-2xl font-semibold mb-2">{hospital.name}</h2>
-            <p className="text-gray-700 text-center">{hospital.description}</p>
+            <p className="text-white p-5 text-center">{hospital.description}</p>
           </div>
         ))}
       </div>

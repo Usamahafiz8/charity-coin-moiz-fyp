@@ -1,6 +1,8 @@
 import React, { useState } from 'react';  
 import TrustyRegistration from './Trusty'; // Import your Trusty form
-import HospitalRegistration from './HospitalRegistration'; // Import your HospitalRegistration form
+import HospitalRegistration from './HospitalRegistration';
+
+ // Import your HospitalRegistration form
 
 const CharityRegistration = () => {
   const [charityData, setCharityData] = useState({
@@ -209,7 +211,7 @@ const CharityRegistration = () => {
         ) : activeForm === 'trusty' ? (
           <TrustyRegistration /> 
         ) : (
-          <HospitalRegistration /> 
+          <HospitalRegistration/>
         )}
       </div>
     </div>

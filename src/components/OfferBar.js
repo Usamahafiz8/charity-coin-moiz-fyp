@@ -21,13 +21,7 @@ const OfferBar = () => {
         ) : (
           <p className="text-center sm:text-left opacity-100 transition-opacity font-bold duration-1000 ml-3 ease-in-out">Donate in crypto to save lives</p>
         )}
-        <div>
-          <Link href="/login">
-            <button className="bg-green-600 text-white px-3 py-2 rounded-full mr-5 hover:bg-green-400 transition duration-200 text-xs sm:text-sm">
-              Login
-            </button>
-          </Link>
-        </div>
+        
       </div>
     </div>
   );
