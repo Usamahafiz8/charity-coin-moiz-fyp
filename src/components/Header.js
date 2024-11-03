@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "next/link"; 
 import React, { useState } from "react";
 import OfferBar from "./OfferBar";
 import Web3Connection from "@/utils/web3Connection";
@@ -10,14 +10,14 @@ const Header = () => {
     <>
       <OfferBar />
       <div className="bg-gray-950 text-white">
-        <div className="font-sans font-bold text-sm m-0 p-6 box-border">
+        <div className="font-sans font-bold text-sm m-0 p-2 box-border">
           <header className="bg-gray-950 p-4">
             <div className="container mx-auto flex justify-between items-center">
               <Link
                 href="/"
                 className="text-white text-lg font-bold hover:cursor-pointer"
               >
-                Charity Foundtion
+                Charity Foundation
               </Link>
 
               {/* Hamburger Icon */}
@@ -43,48 +43,36 @@ const Header = () => {
                 </svg>
               </button>
 
-              {/* Navigation Links */}
-              <nav
-                className={`lg:flex ${isOpen ? "block" : "hidden"} lg:block`}
-              >
-                <ul className="flex flex-col md:flex-row md:items-center list-none space-y-4 md:space-y-0 md:space-x-5">
-                  <li className="">
-                    <Link href="/Pool" className="text-white">
-                      Pool
-                    </Link>
-                  </li>
-                  <li className="">
-                    <Link href="/registration" className="text-white ">
-                      Registration
-                    </Link>
-                  </li>
-                  <li className="">
-                    <Link href="/hospitaldetails">
-                      Hospitals Details
-                    </Link>
-                  </li>
-                  <li className="">
-                    <Link href="/about" className="text-white">
-                      About
-                    </Link>
-                  </li>
-                  <li className="">
-                    <Link
-                      href="/contact"
-                      className="text-red-600  rounded-xl hover:text-red-400 "
-                    >
-                      EmergencyContact
-                    </Link>
-                  </li>
-                  <li className="">
-                    <Web3Connection />
-                  </li>
+              {/* Desktop Navigation Links */}
+              <nav className="hidden lg:flex">
+                <ul className="flex flex-row items-center list-none space-x-5">
+                  <li><Link href="/Pool" className="text-white">Pool</Link></li>
+                  <li><Link href="/registration" className="text-white">Registration</Link></li>
+                  <li><Link href="/hospitaldetails" className="text-white">Hospitals Details</Link></li>
+                  <li><Link href="/about" className="text-white">About</Link></li>
+                  <li><Link href="/contact" className="text-red-600 rounded-xl hover:text-red-400">Emergency Contact</Link></li>
+                  <li><Web3Connection /></li>
                 </ul>
               </nav>
             </div>
           </header>
-        </div>
 
+          {/* Mobile Dropdown Navigation */}
+          {isOpen && (
+            <div className="bg-gray-950 lg:hidden">
+              <nav>
+                <ul className="flex flex-col items-center list-none space-y-4 py-4">
+                  <li><Link href="/Pool" className="text-white">Pool</Link></li>
+                  <li><Link href="/registration" className="text-white">Registration</Link></li>
+                  <li><Link href="/hospitaldetails" className="text-white">Hospitals Details</Link></li>
+                  <li><Link href="/about" className="text-white">About</Link></li>
+                  <li><Link href="/contact" className="text-red-600 rounded-xl hover:text-red-400">Emergency Contact</Link></li>
+                  <li><Web3Connection /></li>
+                </ul>
+              </nav>
+            </div>
+          )}
+        </div>
       </div>
     </>
   );

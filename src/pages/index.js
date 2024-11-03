@@ -12,7 +12,7 @@ export default function Home() {
   const [isVisible, setIsVisible] = useState(false);
 
   return (
-    <div class="Background-video" className=" relative flex flex-col items-center justify-center gap-11 min-h-screen overflow-hidden">
+    <div  className=" relative flex flex-col items-center justify-center gap-11 min-h-screen overflow-hidden">
       <video
         src="images/Background.mp4" 
         autoPlay
@@ -152,6 +152,7 @@ export default function Home() {
                   className="rounded-lg"
                 />
               </div>
+
             </div>
           </div>
         </>
