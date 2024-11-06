@@ -29,10 +29,10 @@ export default function Home() {
             animate="animate"
           >
             <h1 className="md:text-8xl font-bold text-white text-5xl ">
-              Maximize your crypto impact<br /> with our no fee model.
+              Maximize your token impact<br /> with our no fee model.
             </h1>
             <p className="mt-8 text-2xl font-thin text-white">
-              With Crypto for Charity, you can give with confidence knowing that<br /> 
+              With token for Charity, you can give with confidence knowing that<br /> 
               100% of the net proceeds of your donation support the causes you love.
             </p>
             <motion.a
@@ -50,7 +50,7 @@ export default function Home() {
               <h2 className="text-2xl font-semibold text-white">How it works</h2>
               <p className="text-white">
                 You can make an impact anytime.<br /> Choose from more than 55,000 501(c)(3)
-                <br /> nonprofits to support, and we take care of<br /> the rest. Crypto for Charity supports your
+                <br /> nonprofits to support, and we take care of<br /> the rest. token for Charity supports your
                 <br /> philanthropy whether that’s through<br /> cryptocurrency, NFTs, or NFT drop proceeds.
               </p>
               <button className="w-32 h-10 bg-green-600 text-white font-bold rounded-full hover:bg-green-400 transition duration-200">
@@ -68,7 +68,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Why Donate Crypto Section */}
+          {/* Why Donate token Section */}
           <div className="bg-gray-600/50 rounded-lg shadow-lg p-6 backdrop-blur-md backdrop-saturate-200 z-10">
             {/* First Section */}
             <div className="flex flex-col md:flex-row items-center justify-center w-full">
@@ -83,10 +83,10 @@ export default function Home() {
               </div>
               <div className="md:w-1/2 flex flex-col gap-4 text-center md:text-left">
                 <h2 className="text-2xl font-bold text-white mb-5">
-                  Why donate crypto <br /> instead of cash?
+                  Why donate token <br /> instead of cash?
                 </h2>
                 <p className="text-white ml-4">
-                  Donating crypto isn’t just for the<br /> greater good, it’s also strategic for<br /> you. When you donate crypto, you...
+                  Donating token isn’t just for the<br /> greater good, it’s also strategic for<br /> you. When you donate crypto, you...
                 </p>
                 <div className="flex flex-col space-y-4">
                   {['Support the causes that are important to you', 

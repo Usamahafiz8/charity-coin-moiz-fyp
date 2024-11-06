@@ -19,7 +19,7 @@ const OfferBar = () => {
         {showFirstText ? (
           <p className="text-center sm:text-left opacity-100 transition-opacity font-bold duration-1000 ml-3 ease-in-out">Exclusive Offers! Get 20% off on your first donation!</p>
         ) : (
-          <p className="text-center sm:text-left opacity-100 transition-opacity font-bold duration-1000 ml-3 ease-in-out">Donate in crypto to save lives</p>
+          <p className="text-center sm:text-left opacity-100 transition-opacity font-bold duration-1000 ml-3 ease-in-out">Donate in token to save lives</p>
         )}
         
       </div>
