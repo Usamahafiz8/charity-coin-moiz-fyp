@@ -43,51 +43,49 @@ const CharityRegistration = () => {
             : 'Hospital Registration'}
         </h2>
 
-        <nav className="flex justify-center mb-6 border-b border-gray-200 dark:border-gray-700">
-  <ul className="flex flex-wrap text-sm font-medium text-center text-gray-500 dark:text-gray-400">
-    <li className="me-2">
-      <a
-        href="#"
-        onClick={() => setActiveForm('charity')}
-        className={`inline-block p-4 rounded-t-lg ${
-          activeForm === 'charity'
-            ? 'text-blue-600 bg-gray-100 dark:bg-gray-800 dark:text-blue-500'
-            : 'hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300'
-        }`}
-      >
-        Charity Registration
-      </a>
-    </li>
-    <li className="me-2">
-      <a
-        href="#"
-        onClick={() => setActiveForm('trusty')}
-        className={`inline-block p-4 rounded-t-lg ${
-          activeForm === 'trusty'
-            ? 'text-blue-600 bg-gray-100 dark:bg-gray-800 dark:text-blue-500'
-            : 'hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300'
-        }`}
-      >
-        Trusty Registration
-      </a>
-    </li>
-    <li className="me-2">
-      <a
-        href="#"
-        onClick={() => setActiveForm('HospitalRegistration')}
-        className={`inline-block p-4 rounded-t-lg ${
-          activeForm === 'HospitalRegistration'
-            ? 'text-blue-600 bg-gray-100 dark:bg-gray-800 dark:text-blue-500'
-            : 'hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300'
-        }`}
-      >
-        Hospital Registration
-      </a>
-    </li>
-  </ul>
-</nav>
-
-
+                <nav className="flex justify-center mb-6 border-b border-gray-200 dark:border-gray-700"> 
+          <ul className="flex text-center text-gray-500 dark:text-gray-400 overflow-x-auto">
+            <li className="me-2">
+              <a
+                href="#"
+                onClick={() => setActiveForm('charity')}
+                className={`inline-block p-4 rounded-t-lg text-sm md:text-base font-medium ${
+                  activeForm === 'charity'
+                    ? 'text-blue-600 bg-gray-100 dark:bg-gray-800 dark:text-blue-500'
+                    : 'hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300'
+                }`}
+              >
+                Charity Registration
+              </a>
+            </li>
+            <li className="me-2">
+              <a
+                href="#"
+                onClick={() => setActiveForm('trusty')}
+                className={`inline-block p-4 rounded-t-lg text-sm md:text-base font-medium ${
+                  activeForm === 'trusty'
+                    ? 'text-blue-600 bg-gray-100 dark:bg-gray-800 dark:text-blue-500'
+                    : 'hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300'
+                }`}
+              >
+                Trusty Registration
+              </a>
+            </li>
+            <li className="me-2">
+              <a
+                href="#"
+                onClick={() => setActiveForm('HospitalRegistration')}
+                className={`inline-block p-4 rounded-t-lg text-sm md:text-base font-medium ${
+                  activeForm === 'HospitalRegistration'
+                    ? 'text-blue-600 bg-gray-100 dark:bg-gray-800 dark:text-blue-500'
+                    : 'hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300'
+                }`}
+              >
+                Hospital Registration
+              </a>
+            </li>
+          </ul>
+        </nav>
 
         {/* Form Display */}
         {activeForm === 'charity' ? (
