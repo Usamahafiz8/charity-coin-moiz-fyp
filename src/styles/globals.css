@@ -2,11 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-    background-color: #030712;
-    
-    
+
+
+/* global.css */
+
+/* global.css */
+
+body {
+    background-image: url('/images/back.jpg'); /* Replace with your image path */
+    background-size: cover; /* Adjusts image to cover the entire background */
+    background-position: center center; /* Centers the image both horizontally and vertically */
+    background-repeat: no-repeat; /* Ensures the image doesn’t repeat */
+    margin: 0;
+    font-family: Arial, sans-serif; /* Optional: adjust as needed */
 }
 
-
+  
   

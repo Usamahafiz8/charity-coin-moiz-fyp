@@ -11,7 +11,7 @@ const Header = () => {
       <OfferBar />
       <div className="bg-gray-950 text-white">
         <div className="font-sans font-bold text-sm m-0 p-2 box-border">
-          <header className="bg-gray-950 p-4">
+          <header className="bg-gray-950 p-2">
             <div className="container mx-auto flex justify-between items-center">
               <Link
                 href="/"
@@ -22,7 +22,7 @@ const Header = () => {
 
               {/* Hamburger Icon */}
               <button
-                className="text-white block lg:hidden"
+                className="text-white block lg:hidden md:hidden"
                 onClick={() => setIsOpen(!isOpen)}
                 aria-label="Toggle Navigation"
                 aria-expanded={isOpen}
@@ -50,7 +50,7 @@ const Header = () => {
                   <li><Link href="/registration" className="text-white">Registration</Link></li>
                   <li><Link href="/hospitaldetails" className="text-white">Hospitals Details</Link></li>
                   <li><Link href="/about" className="text-white">About</Link></li>
-                  <li><Link href="/contact" className="text-red-600 rounded-xl hover:text-red-400">Emergency Contact</Link></li>
+                  <li><Link href="/emergencycontact" className="text-red-600 rounded-xl hover:text-red-400">Emergency Contact</Link></li>
                   <li><Web3Connection /></li>
                 </ul>
               </nav>

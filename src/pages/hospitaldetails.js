@@ -44,7 +44,7 @@ const HospitalsDetails = () => {
 
   return (
     <div className="container mx-auto py-12 px-4">
-      <h1 className="text-4xl font-bold text-center mb-8">Hospitals Details</h1>
+      <h1 className="text-4xl font-bold text-white text-center mb-8">Hospitals Details</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {hospitals.map((hospital, index) => (
           <div key={index} className="hospital-card flex flex-col items-center">
@@ -58,7 +58,7 @@ const HospitalsDetails = () => {
               className="w-full h-64 object-cover rounded-lg mb-4 cursor-pointer"
               onClick={() => handleImageClick(hospital)} // Open popup when image is clicked
             />
-            <h2 className="text-2xl font-semibold mb-2">{hospital.name}</h2>
+            <h2 className="text-2xl  text-white font-semibold mb-2">{hospital.name}</h2>
             <p className="text-white p-5 text-center">{hospital.description}</p>
           </div>
         ))}
@@ -76,7 +76,7 @@ const HospitalsDetails = () => {
               height={300}
               className="w-full h-64 object-cover rounded-lg mb-4"
             />
-            <p className="text-gray-700 mb-4">{selectedHospital.description}</p>
+            <p className="text-white mb-4">{selectedHospital.description}</p>
             <p className="text-gray-600">{selectedHospital.extraInfo}</p>
             <button
               className="mt-4 bg-green-600 text-white py-2 px-4 rounded hover:bg-green-400 transition duration-200"

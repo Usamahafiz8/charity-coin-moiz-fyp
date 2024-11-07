@@ -144,13 +144,16 @@ export default function Home() {
               </div>
 
               <div className="md:w-1/2 flex justify-center">
-                <Image
-                  src="/images/image_processing.gif"
-                  alt="Support"
-                  width={500}
-                  height={500}
-                  className="rounded-lg"
+                <img
+                src="/images/image_processing.gif"
+                alt="Support"
+                width={500}
+                height={500}
+                className="rounded-lg"
+                
                 />
+                  
+        
               </div>
 
             </div>
