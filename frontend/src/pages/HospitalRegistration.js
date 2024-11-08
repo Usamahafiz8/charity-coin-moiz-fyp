@@ -74,22 +74,6 @@ const HospitalRegistration = () => {
         </div>
 
         <div>
-          <label className="block text-white font-medium mb-2" htmlFor="hospitalType">Hospital Type</label>
-          <select
-            id="hospitalType"
-            name="hospitalType"
-            value={hospitalData.hospitalType}
-            onChange={handleChange}
-            required
-            className="w-full px-4 py-2 border border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600 text-white bg-gray-800"
-          >
-            <option value="">Select Hospital Type</option>
-            <option value="General">General</option>
-            <option value="Specialty">Specialty</option>
-          </select>
-        </div>
-
-        <div>
           <label className="block text-white font-medium mb-2" htmlFor="registrationNumber">Registration Number</label>
           <input
             type="text"
@@ -100,20 +84,6 @@ const HospitalRegistration = () => {
             required
             className="w-full px-4 py-2 border border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600 text-white bg-gray-800"
             placeholder="Enter Registration Number"
-          />
-        </div>
-
-        <div>
-          <label className="block text-white font-medium mb-2" htmlFor="licenseNumber">License Number</label>
-          <input
-            type="text"
-            id="licenseNumber"
-            name="licenseNumber"
-            value={hospitalData.licenseNumber}
-            onChange={handleChange}
-            required
-            className="w-full px-4 py-2 border border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600 text-white bg-gray-800"
-            placeholder="Enter License Number"
           />
         </div>
 
@@ -129,36 +99,6 @@ const HospitalRegistration = () => {
             className="w-full px-4 py-2 border border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600 text-white bg-gray-800"
             placeholder="Enter Email"
           />
-        </div>
-
-        <div>
-          <label className="block text-white font-medium mb-2" htmlFor="numberOfBeds">Number of Beds</label>
-          <input
-            type="number"
-            id="numberOfBeds"
-            name="numberOfBeds"
-            value={hospitalData.numberOfBeds}
-            onChange={handleChange}
-            required
-            className="w-full px-4 py-2 border border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600 text-white bg-gray-800"
-            placeholder="Enter Number of Beds"
-          />
-        </div>
-
-        <div>
-          <label className="block text-white font-medium mb-2" htmlFor="ownershipType">Ownership Type</label>
-          <select
-            id="ownershipType"
-            name="ownershipType"
-            value={hospitalData.ownershipType}
-            onChange={handleChange}
-            required
-            className="w-full px-4 py-2 border border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600 text-white bg-gray-800"
-          >
-            <option value="">Select Ownership Type</option>
-            <option value="Government">Government</option>
-            <option value="Private">Private</option>
-          </select>
         </div>
 
         <div className="md:col-span-2 text-center mt-4">

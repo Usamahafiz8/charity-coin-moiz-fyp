@@ -8,7 +8,7 @@ const Header = () => {
 
   return (
     <>
-      <OfferBar />
+      {/* <OfferBar /> */}
       <div className="bg-gray-950 text-white">
         <div className="font-sans font-bold text-sm m-0 p-2 box-border">
           <header className="bg-gray-950 p-2">
@@ -46,7 +46,7 @@ const Header = () => {
               {/* Desktop Navigation Links */}
               <nav className="hidden lg:flex">
                 <ul className="flex flex-row items-center list-none space-x-5">
-                  <li><Link href="/Pool" className="text-white">Pool</Link></li>
+                <li><Link href="/" className="text-white">Home</Link></li>
                   <li><Link href="/registration" className="text-white">Registration</Link></li>
                   <li><Link href="/hospitaldetails" className="text-white">Hospitals Details</Link></li>
                   <li><Link href="/about" className="text-white">About</Link></li>

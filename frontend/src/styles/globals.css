@@ -4,18 +4,11 @@
 
 
 
-/* global.css */
-
-/* global.css */
-
 body {
-    background-image: url('/images/back.jpg'); /* Replace with your image path */
-    background-size: cover; /* Adjusts image to cover the entire background */
-    background-position: center center; /* Centers the image both horizontally and vertically */
-    background-repeat: no-repeat; /* Ensures the image doesn’t repeat */
-    margin: 0;
-    font-family: Arial, sans-serif; /* Optional: adjust as needed */
-}
-
+    background: linear-gradient(135deg, rgb(147, 59, 54), rgb(30, 60, 67)); /* Coral to aqua */
+    font-family: 'Arial', sans-serif;
+  }
+          
+  
   
   
