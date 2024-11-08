@@ -21,7 +21,7 @@ const PatientRegistration = () => {
     try {
       const response = await axios.get('http://localhost:5000/patients');
       console.log('Response from API', response);
-      setPatients(response.data); // Assuming the response contains an array of patients
+      setPatientData(response.data); // Assuming the response contains an array of patients
     } catch (error) {
       console.error('Error fetching data', error);
     }

@@ -5,7 +5,7 @@ const hospitalSchema = new mongoose.Schema({
   location: { type: String, required: true },
   phone: { type: String, required: true },
   email: { type: String, required: true },
-  wallat_address: { type: String, required: true },
+  wallet_address: { type: String, required: true },
   contactNumber: { type: String, required: true },
 });
 
