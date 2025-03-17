@@ -1,6 +1,7 @@
 import Link from "next/link"; 
 import React, { useState } from "react";
 import OfferBar from "./OfferBar";
+// @ts-ignore
 import Web3Connection from "@/utils/web3Connection";
 
 const Header = () => {
