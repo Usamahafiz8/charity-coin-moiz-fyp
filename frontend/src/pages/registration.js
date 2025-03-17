@@ -1,46 +1,23 @@
-import React, { useEffect, useState } from 'react';
-import TrustyRegistration from './Trusty'; // Import your Trusty form
-import HospitalRegistration from './HospitalRegistration'; // Import your HospitalRegistration form
-import PatientRegistration from './patientregistry'; // Import PatientRegistration form
+import React, { useState } from 'react';
+import TrustyRegistration from '../components/forms/Trusty'; 
+import HospitalRegistration from '../components/forms/HospitalRegistration'; 
+import PatientRegistration from '../components/forms/patientregistry'; 
+import CharityRegistration from '../components/forms/charityRegistration'; 
 
-const CharityRegistration = () => {
-  const [charityData, setCharityData] = useState({
-    FullName: '',
-    phone: '',
-    email: '',
-    donationOptions: '',
-  });
-
-
-
-
-  const [activeForm, setActiveForm] = useState('charity');
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setCharityData((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(charityData);
-    alert('Charity registration submitted successfully!');
-  };
+const RegistrationForms = () => {
+  const [activeForm, setActiveForm] = useState('trusty');
 
   return (
     <div className="flex shadow-lg min-h-screen items-center justify-center p-4 border-white">
       <div className="p-8 rounded-lg shadow-lg w-full max-w-3xl border border-white">
         <h2 className="text-3xl font-bold mb-6 text-white text-center">
-          {activeForm === 'charity'
-            ? 'Charity Registration'
-            : activeForm === 'trusty'
+          {activeForm === 'trusty'
             ? 'Trusty Registration'
             : activeForm === 'hospital'
             ? 'Hospital Registration'
-            : 'Patient Registration'}
+            : activeForm === 'patient'
+            ? 'Patient Registration'
+            : 'Charity Registration'}
         </h2>
 
         <nav className="flex justify-center mb-6 border-b border-gray-200 dark:border-gray-700">
@@ -84,7 +61,6 @@ const CharityRegistration = () => {
                 Hospital Registration
               </a>
             </li>
-            {/* Add Patient Registration link */}
             <li className="me-2">
               <a
                 href="#"
@@ -101,96 +77,19 @@ const CharityRegistration = () => {
           </ul>
         </nav>
 
-        {/* Form Display */}
-        {activeForm === 'charity' ? (
-          <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="md:col-span-2">
-              <h3 className="text-xl font-semibold mb-4 text-white">Personal Information</h3>
-            </div>
-            <div>
-              <label className="block text-white font-medium mb-2" htmlFor="FullName">
-                Full Name
-              </label>
-              <input
-                type="text"
-                id="FullName"
-                name="FullName"
-                value={charityData.FullName}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-2 border border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600 text-white bg-gray-800"
-                placeholder="Enter Full Name"
-              />
-            </div>
-
-            <div>
-              <label className="block text-white font-medium mb-2" htmlFor="phone">
-                Phone
-              </label>
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                value={charityData.phone}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-2 border border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600 text-white bg-gray-800"
-                placeholder="Enter Phone Number"
-              />
-            </div>
-
-            <div>
-              <label className="block text-white font-medium mb-2" htmlFor="email">
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={charityData.email}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-2 border border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600 text-white bg-gray-800"
-                placeholder="Enter Email"
-              />
-            </div>
-
-            <div>
-              <label className="block text-white font-medium mb-2" htmlFor="donationOptions">
-                Donation Options
-              </label>
-              <input
-                type="text"
-                id="donationOptions"
-                name="donationOptions"
-                value={charityData.donationOptions}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-2 border border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600 text-white bg-gray-800"
-                placeholder="Donating in (ETH or USDT)"
-              />
-            </div>
-
-            {/* Submit Button */}
-            <div className="md:col-span-2 text-center mt-4">
-              <button
-                type="submit"
-                className="bg-green-600 text-white py-2 px-8 rounded-lg hover:bg-green-400 transition duration-200"
-              >
-                Register
-              </button>
-            </div>
-          </form>
-        ) : activeForm === 'trusty' ? (
+        {/* Render Forms */}
+        {activeForm === 'trusty' ? (
           <TrustyRegistration />
         ) : activeForm === 'hospital' ? (
           <HospitalRegistration />
+        ) : activeForm === 'patient' ? (
+          <PatientRegistration />
         ) : (
-          <PatientRegistration /> // Render Patient Registration form
+          <CharityRegistration />
         )}
       </div>
     </div>
   );
 };
 
-export default CharityRegistration;
+export default RegistrationForms;

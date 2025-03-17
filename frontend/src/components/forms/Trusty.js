@@ -24,7 +24,7 @@ const TrustyRegistration = () => {
   };
 
   return (
-    <div className="p-8 rounded-lg shadow-lg w-full max-w-3xl border border-white">
+    <div className="p-8 rounded-lg shadow-lg w-full max-w-3xl ">
       <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Trusty Name Field */}
         <div>
