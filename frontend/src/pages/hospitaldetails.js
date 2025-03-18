@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react";
+import { QRCodeCanvas } from "qrcode.react"; // ✅ Corrected import
 
 export const fadeUpVariant = {
   initial: { opacity: 0, y: 100 },
@@ -99,14 +100,9 @@ const HospitalsDetails = () => {
           >
             <div className="bg-white p-6 rounded-lg max-w-screen-xl text-center">
               <h2 className="text-2xl font-semibold mb-4">Scan to Donate</h2>
-              <div className="mb-4">
-                <Image
-                  src="/images/QR.jpg"
-                  alt="QR Code"
-                  width={200}
-                  height={200}
-                  className="mx-auto"
-                />
+              <div className="mb-4 flex justify-center">
+                {/* ✅ Corrected QR Code component */}
+                <QRCodeCanvas value={selectedWallet} size={100} />
               </div>
               <p className="text-xl mb-4">Scan the QR code or use the address below:</p>
               <div className="relative">
