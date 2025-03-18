@@ -1,14 +1,14 @@
 const express = require("express");
-const Hospital = require("../models/hospital");
+const Charity = require("../models/charity");
 
 const router = express.Router();
 
 /**
  * @swagger
- * /hospitals:
+ * /charity:
  *   post:
- *     summary: Create a new hospital
- *     tags: [Hospitals]
+ *     summary: Create a new charity
+ *     tags: [Charity]
  *     requestBody:
  *       required: true
  *       content:
@@ -18,25 +18,25 @@ const router = express.Router();
  *             properties:
  *               name:
  *                 type: string
- *               location:
- *                 type: string
- *               phone:
+ *               purpose:
  *                 type: string
  *               email:
  *                 type: string
- *               wallet_address:
+ *               organization:
  *                 type: string
- *               contactNumber:
+ *               contact:
+ *                 type: string
+ *               wallet_address:
  *                 type: string
  *     responses:
  *       201:
- *         description: Hospital created successfully
+ *         description: Charity created successfully
  */
 router.post("/", async (req, res) => {
-  const hospital = new Hospital(req.body);
   try {
-    const savedHospital = await hospital.save();
-    res.status(201).json(savedHospital);
+    const charity = new Charity(req.body);
+    const savedCharity = await charity.save();
+    res.status(201).json(savedCharity);
   } catch (err) {
     res.status(400).json({ message: err.message });
   }
@@ -44,18 +44,18 @@ router.post("/", async (req, res) => {
 
 /**
  * @swagger
- * /hospitals:
+ * /charity:
  *   get:
- *     summary: Get all hospitals
- *     tags: [Hospitals]
+ *     summary: Get all charities
+ *     tags: [Charity]
  *     responses:
  *       200:
- *         description: List of all hospitals
+ *         description: List of all charities
  */
 router.get("/", async (req, res) => {
   try {
-    const hospitals = await Hospital.find();
-    res.json(hospitals);
+    const charities = await Charity.find();
+    res.json(charities);
   } catch (err) {
     res.status(500).json({ message: err.message });
   }

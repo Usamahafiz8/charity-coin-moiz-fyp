@@ -1,10 +1,43 @@
-const express = require('express');
-const Patient = require('../models/patient');
+const express = require("express");
+const Patient = require("../models/patient");
 
 const router = express.Router();
 
-// Create a new patient
-router.post('/', async (req, res) => {
+/**
+ * @swagger
+ * /patients:
+ *   post:
+ *     summary: Create a new patient
+ *     tags: [Patients]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               name:
+ *                 type: string
+ *               age:
+ *                 type: number
+ *               phone:
+ *                 type: string
+ *               email:
+ *                 type: string
+ *               wallet_address:
+ *                 type: string
+ *               hospitalId:
+ *                 type: string
+ *                 format: uuid
+ *               medicalHistory:
+ *                 type: array
+ *                 items:
+ *                   type: string
+ *     responses:
+ *       201:
+ *         description: Patient created successfully
+ */
+router.post("/", async (req, res) => {
   const patient = new Patient(req.body);
   try {
     const savedPatient = await patient.save();
@@ -14,31 +47,20 @@ router.post('/', async (req, res) => {
   }
 });
 
-// Get all patients
-router.get('/', async (req, res) => {
+/**
+ * @swagger
+ * /patients:
+ *   get:
+ *     summary: Get all patients
+ *     tags: [Patients]
+ *     responses:
+ *       200:
+ *         description: List of all patients
+ */
+router.get("/", async (req, res) => {
   try {
-    const patients = await Patient.find().populate('hospitalId');
+    const patients = await Patient.find();
     res.json(patients);
-  } catch (err) {
-    res.status(500).json({ message: err.message });
-  }
-});
-
-// Update a patient
-router.put('/:id', async (req, res) => {
-  try {
-    const updatedPatient = await Patient.findByIdAndUpdate(req.params.id, req.body, { new: true });
-    res.json(updatedPatient);
-  } catch (err) {
-    res.status(400).json({ message: err.message });
-  }
-});
-
-// Delete a patient
-router.delete('/:id', async (req, res) => {
-  try {
-    await Patient.findByIdAndDelete(req.params.id);
-    res.json({ message: 'Patient deleted' });
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
