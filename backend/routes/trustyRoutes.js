@@ -1,14 +1,14 @@
 const express = require("express");
-const Hospital = require("../models/hospital");
+const Trusty = require("../models/trusty");
 
 const router = express.Router();
 
 /**
  * @swagger
- * /hospitals:
+ * /trusty:
  *   post:
- *     summary: Create a new hospital
- *     tags: [Hospitals]
+ *     summary: Create a new trusty
+ *     tags: [Trusty]
  *     requestBody:
  *       required: true
  *       content:
@@ -18,25 +18,23 @@ const router = express.Router();
  *             properties:
  *               name:
  *                 type: string
- *               location:
- *                 type: string
- *               phone:
- *                 type: string
  *               email:
+ *                 type: string
+ *               organization:
+ *                 type: string
+ *               contact:
  *                 type: string
  *               wallet_address:
  *                 type: string
- *               contactNumber:
- *                 type: string
  *     responses:
  *       201:
- *         description: Hospital created successfully
+ *         description: Trusty created successfully
  */
 router.post("/", async (req, res) => {
-  const hospital = new Hospital(req.body);
   try {
-    const savedHospital = await hospital.save();
-    res.status(201).json(savedHospital);
+    const trusty = new Trusty(req.body);
+    const savedTrusty = await trusty.save();
+    res.status(201).json(savedTrusty);
   } catch (err) {
     res.status(400).json({ message: err.message });
   }
@@ -44,18 +42,18 @@ router.post("/", async (req, res) => {
 
 /**
  * @swagger
- * /hospitals:
+ * /trusty:
  *   get:
- *     summary: Get all hospitals
- *     tags: [Hospitals]
+ *     summary: Get all trusties
+ *     tags: [Trusty]
  *     responses:
  *       200:
- *         description: List of all hospitals
+ *         description: List of all trusties
  */
 router.get("/", async (req, res) => {
   try {
-    const hospitals = await Hospital.find();
-    res.json(hospitals);
+    const trusties = await Trusty.find();
+    res.json(trusties);
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
