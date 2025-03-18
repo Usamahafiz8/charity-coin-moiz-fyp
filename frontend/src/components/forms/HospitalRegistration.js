@@ -20,20 +20,27 @@ const HospitalRegistration = () => {
     }));
   };
 
-
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const response = await axios.post('http://localhost:5000/hospitals', hospitalData);
       console.log('Response:', response.data);
       alert('Hospital registration submitted successfully!');
+
+      // Reset form
+      setHospitalData({
+        name: '',
+        location: '',
+        phone: '',
+        email: '',
+        wallet_address: '',
+        contactNumber: '',
+      });
     } catch (error) {
       console.error('Error submitting data:', error);
       alert('There was an error submitting the registration.');
     }
   };
-  
 
   const inputFields = [
     { id: 'name', label: 'Hospital Name', type: 'text', placeholder: 'Enter Hospital Name' },
@@ -45,7 +52,7 @@ const HospitalRegistration = () => {
   ];
 
   return (
-    <div className="p-8 rounded-lg shadow-lg w-full max-w-3xl ">
+    <div className="p-8 rounded-lg shadow-lg w-full max-w-3xl">
       <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {inputFields.map((field) => (
           <div key={field.id}>

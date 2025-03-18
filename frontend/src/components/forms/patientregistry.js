@@ -1,11 +1,16 @@
+'use client';
 import React, { useState } from 'react';
+import axios from 'axios';
 
 const PatientRegistration = () => {
   const [patientData, setPatientData] = useState({
-    fullName: '',
+    name: '',
+    age: '',
     phone: '',
     email: '',
-    medicalCondition: '',
+    wallet_address: '',
+    hospitalId: '',
+    medicalHistory: [''],
   });
 
   const handleChange = (e) => {
@@ -16,29 +21,67 @@ const PatientRegistration = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleMedicalHistoryChange = (e) => {
+    setPatientData((prevState) => ({
+      ...prevState,
+      medicalHistory: [e.target.value], // Ensuring it's an array
+    }));
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(patientData);
-    alert('Patient registration submitted successfully!');
+    try {
+      const response = await axios.post('http://localhost:5000/patients', patientData);
+      console.log('Response:', response.data);
+      alert('Patient registration submitted successfully!');
+
+      // Reset form
+      setPatientData({
+        name: '',
+        age: '',
+        phone: '',
+        email: '',
+        wallet_address: '',
+        hospitalId: '',
+        medicalHistory: [''],
+      });
+    } catch (error) {
+      console.error('Error submitting data:', error);
+      alert('There was an error submitting the registration.');
+    }
   };
 
   return (
     <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <div className="md:col-span-2">
-      </div>
       <div>
-        <label className="block text-white font-medium mb-2" htmlFor="fullName">
+        <label className="block text-white font-medium mb-2" htmlFor="name">
           Full Name
         </label>
         <input
           type="text"
-          id="fullName"
-          name="fullName"
-          value={patientData.fullName}
+          id="name"
+          name="name"
+          value={patientData.name}
           onChange={handleChange}
           required
           className="w-full px-4 py-2 border border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600 text-white bg-gray-800"
           placeholder="Enter Full Name"
+        />
+      </div>
+
+      <div>
+        <label className="block text-white font-medium mb-2" htmlFor="age">
+          Age
+        </label>
+        <input
+          type="number"
+          id="age"
+          name="age"
+          value={patientData.age}
+          onChange={handleChange}
+          required
+          className="w-full px-4 py-2 border border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600 text-white bg-gray-800"
+          placeholder="Enter Age"
         />
       </div>
 
@@ -75,19 +118,50 @@ const PatientRegistration = () => {
       </div>
 
       <div>
-        <label className="block text-white font-medium mb-2" htmlFor="medicalCondition">
-          Medical Condition
+        <label className="block text-white font-medium mb-2" htmlFor="wallet_address">
+          Wallet Address
         </label>
         <input
           type="text"
-          id="medicalCondition"
-          name="medicalCondition"
-          value={patientData.medicalCondition}
+          id="wallet_address"
+          name="wallet_address"
+          value={patientData.wallet_address}
           onChange={handleChange}
           required
           className="w-full px-4 py-2 border border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600 text-white bg-gray-800"
-          placeholder="Enter Medical Condition"
+          placeholder="Enter Wallet Address"
         />
+      </div>
+
+      <div>
+        <label className="block text-white font-medium mb-2" htmlFor="hospitalId">
+          Hospital ID
+        </label>
+        <input
+          type="text"
+          id="hospitalId"
+          name="hospitalId"
+          value={patientData.hospitalId}
+          onChange={handleChange}
+          required
+          className="w-full px-4 py-2 border border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600 text-white bg-gray-800"
+          placeholder="Enter Hospital ID"
+        />
+      </div>
+
+      <div className="md:col-span-2">
+        <label className="block text-white font-medium mb-2" htmlFor="medicalHistory">
+          Medical History
+        </label>
+        <textarea
+          id="medicalHistory"
+          name="medicalHistory"
+          value={patientData.medicalHistory[0]}
+          onChange={handleMedicalHistoryChange}
+          required
+          className="w-full px-4 py-2 border border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600 text-white bg-gray-800"
+          placeholder="Enter Medical History"
+        ></textarea>
       </div>
 
       <div className="md:col-span-2 text-center mt-4">
