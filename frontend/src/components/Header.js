@@ -1,15 +1,14 @@
 import Link from "next/link"; 
 import React, { useState } from "react";
-import OfferBar from "./OfferBar";
+import Web3Connection from "../utils/web3Connection";
+
 // @ts-ignore
-import Web3Connection from "@/utils/web3Connection";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
-      {/* <OfferBar /> */}
       <div className="bg-gray-950 text-white">
         <div className="font-sans font-bold text-sm m-0 p-2 box-border">
           <header className="bg-gray-950 p-2">
