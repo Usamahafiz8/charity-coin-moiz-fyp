@@ -18,6 +18,7 @@ const Contact = () => {
 const EmergencyContactForm = () => (
   <form className="space-y-4">
     <input type="text" placeholder="Your Name" className="w-full p-3 bg-gray-800 text-white rounded" required />
+    <input type="text" placeholder="Email Address" className="w-full p-3 bg-gray-800 text-white rounded" required />
     <input type="tel" placeholder="Your Phone Number" className="w-full p-3 bg-gray-800 text-white rounded" required />
     <textarea placeholder="Urgent Message" className="w-full p-3 bg-gray-800 text-white rounded" rows="4" required />
     <button type="submit" className="bg-red-600 hover:bg-red-400 text-white py-2 px-4 rounded transition">Send Urgent Message</button>

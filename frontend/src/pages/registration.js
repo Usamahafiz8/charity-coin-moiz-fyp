@@ -5,7 +5,7 @@ import PatientRegistration from '../components/forms/patientregistry';
 import CharityRegistration from '../components/forms/charityRegistration'; 
 
 const RegistrationForms = () => {
-  const [activeForm, setActiveForm] = useState('trusty');
+  const [activeForm, setActiveForm] = useState('charity');
 
   return (
     <div className="flex shadow-lg min-h-screen items-center justify-center p-4 border-white">
@@ -17,7 +17,7 @@ const RegistrationForms = () => {
             ? 'Hospital Registration'
             : activeForm === 'patient'
             ? 'Patient Registration'
-            : 'Charity Registration'}
+            : 'Donation Registration'}
         </h2>
 
         <nav className="flex justify-center mb-6 border-b border-gray-200 dark:border-gray-700">
@@ -32,7 +32,7 @@ const RegistrationForms = () => {
                     : 'hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300'
                 }`}
               >
-                Charity Registration
+                Donation registration
               </a>
             </li>
             <li className="me-2">
