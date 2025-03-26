@@ -40,7 +40,7 @@ export default function Home() {
             Donate Crypto
           </motion.button>
           <Link href="/registration" className="bg-green-600 text-white font-bold px-6 py-3 rounded-full hover:bg-green-500 transition">
-            Register then Donate
+            Register
           </Link>
         </div>
       </motion.section>
@@ -50,7 +50,7 @@ export default function Home() {
         <div className="text-center md:text-left md:w-1/2">
           <h2 className="text-3xl font-semibold text-white">How it works</h2>
           <p className="mt-4 text-lg text-white">
-            You can make an impact anytime. We take care of the rest, supporting philanthropy via cryptocurrency and NFTs.
+            You can make an impact anytime. We take care of the rest, supporting philanthropy via cryptocurrency.
           </p>
           <button className="mt-4 bg-green-600 text-white px-5 py-2 rounded-full hover:bg-green-500 transition" onClick={() => setIsVisible(true)}>
             Donate Directly
