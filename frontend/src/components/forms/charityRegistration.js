@@ -32,7 +32,7 @@ const CharityRegistration = () => {
 
       const data = await response.json();
       if (response.ok) {
-        alert('Charity registration submitted successfully!');
+        alert('Successfully registered');
         setCharityData({
           name: '',
           purpose: '',
@@ -51,7 +51,7 @@ const CharityRegistration = () => {
 
   const inputFields = [
     { id: 'name', label: 'Full Name', type: 'text', placeholder: 'Enter Full Name' },
-    { id: 'purpose', label: 'Purpose', type: 'text', placeholder: 'Purpose of Charity' },
+    { id: 'purpose', label: 'Purpose', type: 'text', placeholder: 'Purpose of Donation' },
     { id: 'email', label: 'Email', type: 'email', placeholder: 'Enter Email' },
     { id: 'organization', label: 'Organization Name', type: 'text', placeholder: 'Enter Organization Name' },
     { id: 'contact', label: 'Phone', type: 'tel', placeholder: 'Enter Phone Number' },

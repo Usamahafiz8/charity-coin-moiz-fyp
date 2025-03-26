@@ -31,7 +31,7 @@ const TrustyRegistration = () => {
         headers: { 'Content-Type': 'application/json' },
       });
       console.log(response.data);
-      alert('Trusty registration submitted successfully!');
+      alert('Successfully registered');
     } catch (error) {
       console.error('Registration failed:', error);
       alert('Failed to register. Please try again.');

@@ -25,7 +25,7 @@ const HospitalRegistration = () => {
     try {
       const response = await axios.post('http://localhost:5000/hospitals', hospitalData);
       console.log('Response:', response.data);
-      alert('Hospital registration submitted successfully!');
+      alert('Successfully registered');
 
       // Reset form
       setHospitalData({

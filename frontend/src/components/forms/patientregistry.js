@@ -33,7 +33,7 @@ const PatientRegistration = () => {
     try {
       const response = await axios.post('http://localhost:5000/patients', patientData);
       console.log('Response:', response.data);
-      alert('Patient registration submitted successfully!');
+      alert('Successfully registered');
 
       // Reset form
       setPatientData({
