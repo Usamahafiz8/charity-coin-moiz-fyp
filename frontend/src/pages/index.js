@@ -80,16 +80,19 @@ export default function Home() {
 
       {/* Get in Touch Section */}
       <section className="bg-gray-700/60 p-6 rounded-lg shadow-lg backdrop-blur-lg w-full max-w-5xl">
-        <h2 className="text-3xl font-semibold text-white text-center">Get in Touch</h2>
-        <form className="mt-6 flex flex-col space-y-4">
-          <input type="text" placeholder="Name" className="px-4 py-2 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600" />
-          <input type="email" placeholder="Email" className="px-4 py-2 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600" />
-          <textarea placeholder="Message" rows="4" className="px-4 py-2 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600"></textarea>
-          <button className="bg-green-600 text-white px-5 py-2 rounded-full hover:bg-green-500 transition">
-            Send Message
-          </button>
-        </form>
-      </section>
+  <h2 className="text-3xl font-semibold text-white text-center">Get in Touch</h2>
+  <form className="mt-6 flex flex-col space-y-4">
+    <input type="text" placeholder="Name" className="px-4 py-2 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600" />
+    <input type="email" placeholder="Email" className="px-4 py-2 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600" />
+    <textarea placeholder="Message" rows="4" className="px-4 py-2 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600"></textarea>
+  </form>
+  <div className="flex justify-center mt-4">
+    <button className="bg-green-600 text-white px-5 py-2 rounded-full hover:bg-green-500 transition">
+      Send Message
+    </button>
+  </div>
+</section>
+
 
       {/* Popup Modal */}
       <AnimatePresence>
