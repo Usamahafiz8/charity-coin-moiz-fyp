@@ -7,9 +7,8 @@ const hospitalRoutes = require("./routes/hospitalRoutes");
 const patientRoutes = require("./routes/patientRoutes");
 const trustyRoutes = require("./routes/trustyRoutes");
 const charityRoutes = require("./routes/charityRoutes");
-const setupSwagger = require("./swagger"); // Import Swagger setup
-
-
+const setupSwagger = require("./swagger"); 
+const emailRoutes = require("./routes/email");
 
 const app = express();
 app.use(bodyParser.json());
@@ -29,6 +28,7 @@ mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true 
   app.use("/patients", patientRoutes);
   app.use("/trusty", trustyRoutes);
   app.use("/charity", charityRoutes);
+  app.use("/email", emailRoutes); 
 
 // Setup Swagger
 setupSwagger(app);
